@@ -13,22 +13,64 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
- * @author Sara
- */
+*
+*Klasa koja predstavlja sednicu skupstine i implementira interfejs GenericEntity.
+*
+*Sednica skupstine ima sednicuSkupstineId kao Long, datum odrzavanja kao Date, broj prisutnih kao int, dnevni red kao String, stambenu zajednicu kao StambenuZajednicu i listu vlasnika koji su prisustvovali toj sednici skupstine kao List<VlasnikPosebnogDela>.
+*
+*
+* @author Sara
+* @version 0.1
+*/
 public class SednicaSkupstine implements GenericEntity {
 
+	/**
+	 * Id sednice skupstine kao Long.
+	 */
     private Long sednicaSkupstineId;
+    
+    /**
+	 * Datum odrzavanja sednice kao Date.
+	 */
     private Date datumOdrzavanja;
+    
+    /**
+	 * Broj prisutnih na sednici kao int.
+	 */
     private int brojPrisutnih;
+    
+    /**
+	 * Dnevni red sednice kao String.
+	 */
     private String dnevniRed;
+    
+    /**
+	 * Stambena zajednica u kojoj je odrzana sednica kao StambenaZajednica.
+	 */
     private StambenaZajednica stambenaZajednica;
+    
+    /**
+	 * Lista vlasnika stanova koji su prisustvovali sednici kao List<VlasnikPosebnogDela>.
+	 */
     private List<VlasnikPosebnogDela> vlasnici;
 
+    /**
+   	 * Kontruktor koji inicijalizuje objekat i postavlja listu vlasnika na novu praznu listu.
+   	 */
     public SednicaSkupstine() {
         vlasnici = new ArrayList<>();
     }
 
+    /**
+	 * Konstruktor koji inicijalizuje objekat i postavlja vrednosti za sednicuSkupstineId, datum odrzavanja, broj prisutnih, dnevni red, stambenu zajednicu i vlasnike.
+	 * 
+	 * @param sednicaSkupstineId SednicaSkupstineId kao Long.
+	 * @param datumOdrzavanja Datum odrzavanja sednice kao Date.
+	 * @param brojPrisutnih Broj prisutnih vlasnika kao int.
+	 * @param dnevniRed Dnevni red sednice kao String.
+	 * @param stambenaZajednica Stambena zajednica kao StambenaZajednica.
+	 * @param vlasnici Vlasnici koji su prisustvovali kao List<VlasnikPosebnogDela>.
+	 */
     public SednicaSkupstine(Long sednicaSkupstineId, Date datumOdrzavanja, 
             int brojPrisutnih, String dnevniRed, StambenaZajednica stambenaZajednica,
             List<VlasnikPosebnogDela> vlasnici) {
@@ -40,50 +82,113 @@ public class SednicaSkupstine implements GenericEntity {
         this.vlasnici = vlasnici;
     }
 
+
+    /**
+	 * Vraca listu vlasnika koji su prisustvovali sednici.
+	 * 
+	 * @return Lista vlasnika kao List<VlasnikPosebnogDela>.
+	 */
     public List<VlasnikPosebnogDela> getVlasnici() {
         return vlasnici;
     }
 
+    /**
+   	 * Postavlja listu vlasnika koji su prisustvovali sednici na novu vrednost.
+   	 * 
+   	 * @param vlasnici Vlasnici kao List<VlasnikPosebnogDela>.
+   	 * 
+   	 */
     public void setVlasnici(List<VlasnikPosebnogDela> vlasnici) {
         this.vlasnici = vlasnici;
     }
 
+    /**
+   	 * Vraca id sednice skupstine.
+   	 * 
+   	 * @return Id sednice skupstine kao Long.
+   	 */
     public Long getSednicaSkupstineId() {
         return sednicaSkupstineId;
     }
 
+    /**
+	 * Postavlja id sednice skupstine na novu vrednost.
+	 * 
+	 * @param sednicaSkupstineId SednicaSkupstineId kao Long.
+	 * 
+	 */
     public void setSednicaSkupstineId(Long sednicaSkupstineId) {
         this.sednicaSkupstineId = sednicaSkupstineId;
     }
 
+    /**
+	 * Vraca datum odrzavanja sednice.
+	 * 
+	 * @return Datum odrzavanja kao Date.
+	 */
     public Date getDatumOdrzavanja() {
         return datumOdrzavanja;
     }
 
+    /**
+	 * Postavlja datum odrzavanja sednice na novu vrednost.
+	 * 
+	 * @param datumOdrzavanja DatumOdrzavanja sednice kao Date.
+	 */
     public void setDatumOdrzavanja(Date datumOdrzavanja) {
         this.datumOdrzavanja = datumOdrzavanja;
     }
 
+    /**
+	 * Vraca broj prisutnih vlasnika na sednici.
+	 * 
+	 * @return Broj prisutnih vlasnika kao int.
+	 */
     public int getBrojPrisutnih() {
         return brojPrisutnih;
     }
 
+    /**
+	 * Postavlja broj prisutnih vlasnika na novu vrednost.
+	 * 
+	 * @param brojPrisutnih Broj prisutnih vlasnika kao int.
+	 */
     public void setBrojPrisutnih(int brojPrisutnih) {
         this.brojPrisutnih = brojPrisutnih;
     }
 
+    /**
+	 * Vraca dnevni red sednice.
+	 * 
+	 * @return Dnevni red sednice kao String.
+	 */
     public String getDnevniRed() {
         return dnevniRed;
     }
 
+    /**
+	 * Postavlja dnevni red sednice na novu vrednost.
+	 * 
+	 * @param dnevniRed DnevniRed sednice kao String.
+	 */
     public void setDnevniRed(String dnevniRed) {
         this.dnevniRed = dnevniRed;
     }
 
+    /**
+	 * Vraca stambenu zajednicu u kojoj je odrzana sednica skupstine.
+	 * 
+	 * @return Stambena zajednica kao StambenaZajednica.
+	 */
     public StambenaZajednica getStambenaZajednica() {
         return stambenaZajednica;
     }
 
+    /**
+	 * Postavlja stambenu zajednicu u kojoj je odrzana sednica skupstine na novu vrednost.
+	 * 
+	 * @param stambenaZajednica StambenaZajednica sednice skupstine kao StambenaZajednica.
+	 */
     public void setStambenaZajednica(StambenaZajednica stambenaZajednica) {
         this.stambenaZajednica = stambenaZajednica;
     }
