@@ -11,23 +11,68 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Sara
- */
+*
+*Klasa koja predstavlja vlasnika posebnog dela i implementira interfejs GenericEntity.
+*
+*Vlasnik posebnog dela ima vlasnikId kao Long i ime, prezime, broj posebnog dela, kontakt vlasnika kao String vrednosti, i velicinu posebnog dela kao double, mernu jedinicu kao MernaJedinica i stambenu zajednicu kao StambenaZajednica.
+*
+* @author Sara
+* @version 0.1
+*/
 public class VlasnikPosebnogDela implements GenericEntity {
 
+	/**
+	 * VlasnikId kao Long.
+	 */
     private Long vlasnikId;
+    
+    /**
+	 * Ime vlasnika kao String.
+	 */
     private String ime;
+    /**
+	 * Prezime vlasnika kao String.
+	 */
     private String prezime;
+    /**
+	 * Broj stana vlasnika kao String.
+	 */
     private String brojPosebnogDela;
+    /**
+	 * Velicina stana vlasnika kao double.
+	 */
     private double velicinaPosebnogDela;
+    /**
+	 * Merna jedinica u kojoj je izrazena velicina stana vlasnika kao MernaJedinica.
+	 */
     private MernaJedinica mernaJedinica;
+    /**
+	 * Kontakt vlasnika kao String.
+	 */
     private String kontaktVlasnika;
+    /**
+	 * Stambena zajednica stana vlasnika kao StambenaZajednica.
+	 */
     private StambenaZajednica stambenaZajednica;
 
+    /**
+   	 * Kontruktor koji inicijalizuje objekat i nista vise.
+   	 */
     public VlasnikPosebnogDela() {
     }
 
+    /**
+	 * Konstruktor koji inicijalizuje objekat i postavlja vrednosti za vlasnikId, ime, prezime, broj posebnog dela, velicinu posebnog dela, kontakt vlasnika, mernu jedinicu i stambenu zajednicu.
+	 * 
+	 * @param vlasnikId VlasnikId kao Long.
+	 * @param ime Ime vlasnika kao String.
+	 * @param prezime Prezime vlasnika kao String.
+	 * @param brojPosebnogDela BrojPosebnogDela kao String.
+	 * @param velicinaPosebnogDela VelicinaPosebnogDela kao double.
+	 * @param kontaktVlasnika KontaktVlasnika kao String.
+	 * @param stambenaZajednica Stambena zajednica kao StambenaZajednica.
+	 * 
+	 */
     public VlasnikPosebnogDela(Long vlasnikId, String ime, String prezime, 
             String brojPosebnogDela, double velicinaPosebnogDela, 
             String kontaktVlasnika, StambenaZajednica stambenaZajednica) {
@@ -42,70 +87,148 @@ public class VlasnikPosebnogDela implements GenericEntity {
         mernaJedinica = MernaJedinica.m2;
     }
 
+    /**
+	 * Vraca stambenu zajednicu u kojoj zivi vlasnik.
+	 * 
+	 * @return Stambena zajednica kao StambenaZajednica.
+	 */
     public StambenaZajednica getStambenaZajednica() {
         return stambenaZajednica;
     }
-
+    /**
+   	 * Postavlja stambenu zajednicu u kojoj zivi vlasnik na novu vrednost.
+   	 * 
+   	 * @param stambenaZajednica Stambena zajednica kao StambenaZajednica.
+   	 * 
+   	 */
     public void setStambenaZajednica(StambenaZajednica stambenaZajednica) {
         this.stambenaZajednica = stambenaZajednica;
     }
 
+    /**
+	 * Vraca id vlasnika.
+	 * 
+	 * @return VlasnikId kao Long.
+	 */
     public Long getVlasnikId() {
         return vlasnikId;
     }
 
+    /**
+	 * Postavlja id vlasnika na novu vrednost.
+	 * 
+	 * @param vlasnikId VlasnikId kao Long.
+	 * 
+	 */
     public void setVlasnikId(Long vlasnikId) {
         this.vlasnikId = vlasnikId;
     }
 
+    /**
+	 * Vraca ime vlasnika.
+	 * 
+	 * @return Ime vlasnika kao String.
+	 */
     public String getIme() {
         return ime;
     }
 
+    /**
+	 * Postavlja ime vlasnika na novu vrednost.
+	 * 
+	 * @param ime Ime vlasnika kao String.
+	 */
     public void setIme(String ime) {
         this.ime = ime;
     }
-
+    /**
+	 * Vraca prezime vlasnika.
+	 * 
+	 * @return Prezime vlasnika kao String.
+	 */
     public String getPrezime() {
         return prezime;
     }
-
+    /**
+	 * Postavlja prezime vlasnika na novu vrednost.
+	 * 
+	 * @param prezime Prezime vlasnika kao String.
+	 */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
-
+    /**
+	 * Vraca broj stana vlasnika.
+	 * 
+	 * @return Broj stana vlasnika kao String.
+	 */
     public String getBrojPosebnogDela() {
         return brojPosebnogDela;
     }
-
+    /**
+	 * Postavlja broj stana vlasnika na novu vrednost.
+	 * 
+	 * @param brojPosebnogDela Broj posebnog dela vlasnika kao String.
+	 */
     public void setBrojPosebnogDela(String brojPosebnogDela) {
         this.brojPosebnogDela = brojPosebnogDela;
     }
 
+    /**
+	 * Vraca velicinu stana vlasnika.
+	 * 
+	 * @return Velicina stana vlasnika kao double.
+	 */
     public double getVelicinaPosebnogDela() {
         return velicinaPosebnogDela;
     }
-
+    /**
+	 * Postavlja velicinu stana vlasnika na novu vrednost.
+	 * 
+	 * @param velicinaPosebnogDela Velicina posebnog dela vlasnika kao double.
+	 */
     public void setVelicinaPosebnogDela(double velicinaPosebnogDela) {
         this.velicinaPosebnogDela = velicinaPosebnogDela;
     }
 
+    /**
+  	 * Vraca kontakt vlasnika.
+  	 * 
+  	 * @return Kontakt vlasnika kao String.
+  	 */
     public String getKontaktVlasnika() {
         return kontaktVlasnika;
     }
-
+    /**
+	 * Postavlja kontakt vlasnika na novu vrednost.
+	 * 
+	 * @param kontaktVlasnika Kontakt vlasnika kao String.
+	 */
     public void setKontaktVlasnika(String kontaktVlasnika) {
         this.kontaktVlasnika = kontaktVlasnika;
     }
 
+    /**
+  	 * Vraca mernu jedinicu povrsine stana vlasnika.
+  	 * 
+  	 * @return Merna jedinica kao MernaJedinica.
+  	 */
     public MernaJedinica getMernaJedinica() {
         return mernaJedinica;
     }
 
+    /**
+	 * Postavlja mernu jedinicu povrsine stana vlasnika na novu vrednost.
+	 * 
+	 * @param mernaJedinica Merna jedinica kao MernaJedinica.
+	 */
     public void setMernaJedinica(MernaJedinica mernaJedinica) {
         this.mernaJedinica = mernaJedinica;
     }
 
+    /**
+	 * @return String sa svim podacima o Vlasniku posebnog dela.
+	 */
     @Override
     public String toString() {
         return ime + " " + prezime;

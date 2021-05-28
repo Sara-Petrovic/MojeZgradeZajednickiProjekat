@@ -87,6 +87,9 @@ public interface GenericEntity extends Serializable {
 	 *  @param ResultSet ResultSet kao ResultSet.
 	 *  
 	 *  @return List<GenericEntity>  kao List<GenericEntity>.
+	 *  
+	 *  @throws java.lang.Exception ako je rs null
+	 *  
 	 */
     List<GenericEntity> makeList(ResultSet rs) throws Exception;
 

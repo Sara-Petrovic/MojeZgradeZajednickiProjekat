@@ -11,35 +11,78 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Sara
- */
+*
+*Klasa koja predstavlja asocijativnu klasu izmedju sednice skupstine i vlasnika posebnog dela i implementira interfejs GenericEntity.
+*
+*SednicaVlasnik ima sednicu skupstine kao SednicaSkupstine i vlasnika posebnog dela kao VlasnikPosebnogDela.
+*
+* @author Sara
+* @version 0.1
+*/
 public class SednicaVlasnik implements GenericEntity {
 
+	/**
+	 * Sednica skupstine kao SednicaSkupstine.
+	 */
+	
     private SednicaSkupstine sednicaSkupstine;
+    /**
+	 * Vlasnik posebnog dela kao VlasnikPosebnogDela.
+	 */
     private VlasnikPosebnogDela vlasnikPosebnogDela;
 
+    /**
+	 * Kontruktor koji inicijalizuje objekat i nista vise.
+	 */
     public SednicaVlasnik() {
     }
 
+    /**
+   	 * Konstruktor koji inicijalizuje objekat i postavlja vrednosti za sednicu skupstine i vlasnika posebnog dela.
+   	 * 
+   	 * @param sednicaSkupstine Sednica skupstine kao SednicaSkupstine.
+   	 * @param vlasnikPosebnogDela Vlasnik posebnog dela kao VlasnikPosebnogDela.
+   	 */
     public SednicaVlasnik(SednicaSkupstine sednicaSkupstine, 
             VlasnikPosebnogDela vlasnikPosebnogDela) {
         this.sednicaSkupstine = sednicaSkupstine;
         this.vlasnikPosebnogDela = vlasnikPosebnogDela;
     }
 
+    /**
+	 * Vraca sednicu skupstine.
+	 * 
+	 * @return Sednica skupstine kao SednicaSkupstine.
+	 */
     public SednicaSkupstine getSednicaSkupstine() {
         return sednicaSkupstine;
     }
 
+    /**
+   	 * Postavlja sednicu skupstine na novu vrednost.
+   	 * 
+   	 * @param sednicaSkupstine Sednica skupstine kao SednicaSkupstine.
+   	 * 
+   	 */
     public void setSednicaSkupstine(SednicaSkupstine sednicaSkupstine) {
         this.sednicaSkupstine = sednicaSkupstine;
     }
 
+    /**
+	 * Vraca vlasnika posebnog dela.
+	 * 
+	 * @return Vlasnik posebnog dela kao VlasnikPosebnogDela.
+	 */
     public VlasnikPosebnogDela getVlasnikPosebnogDela() {
         return vlasnikPosebnogDela;
     }
 
+    /**
+   	 * Postavlja vlasnika posebnog dela na novu vrednost.
+   	 * 
+   	 * @param vlasnikPosebnogDela Vlasnik posebnog dela kao VlasnikPosebnogDela.
+   	 * 
+   	 */
     public void setVlasnikPosebnogDela(VlasnikPosebnogDela vlasnikPosebnogDela) {
         this.vlasnikPosebnogDela = vlasnikPosebnogDela;
     }
@@ -70,17 +113,16 @@ public class SednicaVlasnik implements GenericEntity {
 
     @Override
     public void setId(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public String getUpdateValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return "";
     }
 
     @Override
     public String getPrimaryKeyValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return "";
     }
 
     @Override

@@ -13,23 +13,75 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *
- * @author Sara
- */
+*
+*Klasa koja predstavlja stambenu zajednicu i implementira interfejs GenericEntity.
+*
+*Stambena zajednica ima stambenaZajednicaId kao Long i ulicu, broj, tekuci racun, banku, pib i maticni broj kao String i mesto kao Mesto.
+*
+* @author Sara
+* @version 0.1
+*/
 public class StambenaZajednica implements GenericEntity {
 
+	/**
+	 * StambenaZajednicaId kao Long.
+	 */
     private Long stambenaZajednicaId;
+    
+    /**
+	 * Ulica stambene zajednice kao String.
+	 */
     private String ulica;
+    
+    /**
+	 * Broj stambene zajednice kao String.
+	 */
     private String broj;
+    
+    /**
+	 * Mesto stambene zajednice kao Mesto.
+	 */
     private Mesto mesto;
+    
+    /**
+	 * Tekuci racun stambene zajednice kao String.
+	 */
     private String tekuciRacun;
+    
+    /**
+	 * Banka stambene zajednice kao String.
+	 */
     private String banka;
+    
+    /**
+	 * Pib stambene zajednice kao String.
+	 */
     private String pib;
+    
+    /**
+	 * Maticni broj stambene zajednice kao String.
+	 */
     private String maticniBroj;
 
+    
+    /**
+   	 * Kontruktor koji inicijalizuje objekat i nista vise.
+   	 */
     public StambenaZajednica() {
     }
 
+    /**
+   	 * Konstruktor koji inicijalizuje objekat i postavlja vrednosti za id stambene zajednice, ulicu, broj, mesto, tekuci racun, banku, pib i maticni broj.
+   	 * 
+   	 * @param stambenaZajednicaId StambenaZajednicaId kao Long.
+   	 * @param ulica Ulica kao String.
+   	 * @param broj Broj stambene zajednice kao String.
+   	 * @param mesto Mesto kao Mesto.
+   	 * @param tekuciRacun Tekuci racun kao String.
+   	 * @param banka Banka kao String.
+   	 * @param pib Pib kao String.
+   	 * @param maticniBroj Maticni broj stambene zajednice kao String.
+   	 */
     public StambenaZajednica(Long stambenaZajednicaId, String ulica, String broj,
             Mesto mesto, String tekuciRacun, String banka, 
             String pib, String maticniBroj) {
@@ -43,81 +95,180 @@ public class StambenaZajednica implements GenericEntity {
         this.maticniBroj = maticniBroj;
     }
 
+    /**
+	 * Vraca banku stambene zajednice.
+	 * 
+	 * @return Banka stambene zajednice kao String.
+	 */
     public String getBanka() {
         return banka;
     }
 
+    /**
+	 * Postavlja banku stambene zajednice na novu vrednost.
+	 * 
+	 * @param banka Banka stambene zajednice kao String.
+	 */
     public void setBanka(String banka) {
         this.banka = banka;
     }
 
+    /**
+	 * Vraca pib stambene zajednice.
+	 * 
+	 * @return Pib stambene zajednice kao String.
+	 */
     public String getPib() {
         return pib;
     }
 
+    /**
+	 * Postavlja pib stambene zajednice na novu vrednost.
+	 * 
+	 * @param pib Pib stambene zajednice kao String.
+	 */
     public void setPib(String pib) {
         this.pib = pib;
     }
 
+    /**
+	 * Vraca maticni broj stambene zajednice.
+	 * 
+	 * @return Maticni broj stambene zajednice kao String.
+	 */
     public String getMaticniBroj() {
         return maticniBroj;
     }
 
+    /**
+	 * Postavlja maticni broj stambene zajednice na novu vrednost.
+	 * 
+	 * @param maticniBroj Maticni broj stambene zajednice kao String.
+	 */
     public void setMaticniBroj(String maticniBroj) {
         this.maticniBroj = maticniBroj;
     }
 
+    /**
+	 * Vraca tekuci racun stambene zajednice.
+	 * 
+	 * @return Tekuci racun stambene zajednice kao String.
+	 */
     public String getTekuciRacun() {
         return tekuciRacun;
     }
 
+    /**
+	 * Postavlja tekuci racun stambene zajednice na novu vrednost.
+	 * 
+	 * @param tekuciRacun Tekuci racun stambene zajednice kao String.
+	 */
     public void setTekuciRacun(String tekuciRacun) {
         this.tekuciRacun = tekuciRacun;
     }
 
+    /**
+	 * Vraca id stambene zajednice.
+	 * 
+	 * @return Id stambene zajednice kao Long.
+	 */
     public Long getStambenaZajednicaId() {
         return stambenaZajednicaId;
     }
 
+    /**
+   	 * Postavlja id stambene zajednice na novu vrednost.
+   	 * 
+   	 * @param stambenaZajednicaId StambenaZajednicaId kao Long.
+   	 * 
+   	 */
     public void setStambenaZajednicaId(Long stambenaZajednicaId) {
         this.stambenaZajednicaId = stambenaZajednicaId;
     }
 
+    /**
+	 * Vraca ulicu stambene zajednice.
+	 * 
+	 * @return Ulica stambene zajednice kao String.
+	 */
     public String getUlica() {
         return ulica;
     }
 
+
+    /**
+	 * Postavlja ulicu stambene zajednice na novu vrednost.
+	 * 
+	 * @param ulica Ulica stambene zajednice kao String.
+	 */
     public void setUlica(String ulica) {
         this.ulica = ulica;
     }
 
+    /**
+	 * Vraca broj stambene zajednice.
+	 * 
+	 * @return Broj stambene zajednice kao String.
+	 */
     public String getBroj() {
         return broj;
     }
 
+    /**
+	 * Postavlja broj stambene zajednice na novu vrednost.
+	 * 
+	 * @param broj Broj stambene zajednice kao String.
+	 */
     public void setBroj(String broj) {
         this.broj = broj;
     }
 
+    /**
+   	 * Vraca mesto stambene zajednice.
+   	 * 
+   	 * @return Mesto stambene zajednice kao Mesto.
+   	 */
     public Mesto getMesto() {
         return mesto;
     }
 
+    /**
+	 * Postavlja mesto stambene zajednice na novu vrednost.
+	 * 
+	 * @param mesto Mesto stambene zajednice kao Mesto.
+	 */
     public void setMesto(Mesto mesto) {
         this.mesto = mesto;
     }
 
+    /**
+	 * @return String sa svim podacima o Stambenoj zajednici.
+	 */
     @Override
     public String toString() {
         return ulica + " " + broj + ", " + mesto;
     }
 
+    /**
+	 * @return Int koji predstavlja hash kod za objekat klase StambenaZajednica.
+	 */
     @Override
     public int hashCode() {
         int hash = 7;
         return hash;
     }
 
+    /**
+	 * Poredi dve stambene zajednice i vraca true ako su iste i false ako nisu.
+	 * 
+	 * Stambene zajednice se porede po stambenaZajednicaId-ju i moraju da budu isti.
+	 * 
+	 * @return 
+	 * <ul>
+	 * 			<li>true ako su oba objekta klase StambenaZajednica i imaju isti stambenaZajednicaId</li>
+	 * 			<li>false u svim ostalim slucajevima</li>
+	 * </ul>
+	 */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -214,7 +365,7 @@ public class StambenaZajednica implements GenericEntity {
     public List<GenericEntity> makeList(ResultSet rs) throws Exception {
         List<GenericEntity> lista = new ArrayList<>();
         while (rs.next()) {
-            //System.out.println("usao");
+            
             StambenaZajednica stambenaZajednica = new StambenaZajednica();
             stambenaZajednica.setStambenaZajednicaId(rs.getLong("stambenazajednicaid"));
             stambenaZajednica.setUlica(rs.getString("ulica"));
@@ -224,7 +375,7 @@ public class StambenaZajednica implements GenericEntity {
             stambenaZajednica.setPib(rs.getString("pib"));
             stambenaZajednica.setMaticniBroj(rs.getString("maticnibroj"));
 
-           // System.out.println("usao2");
+       
             Mesto mesto = new Mesto();
             mesto.setMestoId(rs.getLong("mesto"));
             mesto.setNaziv(rs.getString("naziv"));
