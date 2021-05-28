@@ -11,28 +11,83 @@ import java.util.List;
 
 /**
  *
- * @author Sara
+ *Interfejs koji predstavlja opsti domenski objekat.
+ * @author Sara Petrovic
  */
-public interface GenericEntity extends Serializable {//ovo je opsti domenski objekat kod profesora
+public interface GenericEntity extends Serializable {
 
+	
+	/**
+	 * Vraca naziv tabele u bazi.
+	 * 
+	 *  @return TableName TableName kao String.
+	 */
     String getTableName();
 
+    /**
+	 * Vraca nazive kolona u koje treba insertovati vrednosti.
+	 * 
+	 *  @return ColumnNames ColumnNames kao String.
+	 */
     String getColumnNamesForInsert();
 
+    /**
+	 * Vraca vrednosti koje treba insertovati u tabelu.
+	 * 
+	 *  @return InsertValues InsertValues kao String.
+	 */
     String getInsertValues();
     
+    /**
+	 * Vraca alijas tabele.
+	 * 
+	 *  @return Alijas kao String.
+	 */
     String getAlijas();
 
+    /**
+	 * Postavlja id na novu vrednost.
+	 * 
+	 * @param id Id kao Long.
+	 * 
+	 */
     void setId(Long id);
 
+    /**
+	 * Vraca vrednosti koje treba izmeniti u tabeli.
+	 * 
+	 *  @return UpdateValues UpdateValues kao String.
+	 */
     String getUpdateValues();
 
+    /**
+	 * Vraca primarni kljuc tabele.
+	 * 
+	 *  @return PrimaryKey PrimaryKey kao String.
+	 */
     String getPrimaryKeyValue();
 
+    /**
+	 * Vraca join deo upita.
+	 * 
+	 *  @return Join Join kao String.
+	 */
     String getJoin();
 
+    /**
+	 * Vraca where uslov u upitu .
+	 * 
+	 *  @return SelectWhere SelectWhere kao String.
+	 */
     String selectWhere();
 
+    /**
+	 * Vraca listu domenskih objekata nakon što dobije rezultat izvršavanja upita.
+	 * 
+	 *  @param ResultSet ResultSet kao ResultSet.
+	 *  
+	 *  @return List<GenericEntity>  kao List<GenericEntity>.
+	 */
     List<GenericEntity> makeList(ResultSet rs) throws Exception;
 
 

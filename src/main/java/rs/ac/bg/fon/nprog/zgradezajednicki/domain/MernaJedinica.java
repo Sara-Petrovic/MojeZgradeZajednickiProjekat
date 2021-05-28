@@ -8,11 +8,21 @@ package rs.ac.bg.fon.nprog.zgradezajednicki.domain;
 import java.io.Serializable;
 
 /**
+ *Merne jedinice koje mogu biti koriscene. 
  *
  * @author Sara
  */
 public enum MernaJedinica implements Serializable{
+	/**
+	 * Kvadratni centimetar.
+	 */
     cm2,
+    /**
+     * Kvadratni metar.
+     */
     m2,
+    /**
+     * Kubni metar.
+     */
     m3,
 }

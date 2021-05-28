@@ -11,9 +11,14 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *
- * @author Sara
- */
+*
+*Klasa koja predstavlja korisnika programa moje zgrade i implementira interfejs GenericEntity.
+*
+*Korisnik ima id kao Long i ime, prezime, korisnicko ime i lozinku kao String vrednosti.
+*
+* @author Sara
+* @version 0.1
+*/
 public class Mesto implements GenericEntity {
 
     private Long mestoId;

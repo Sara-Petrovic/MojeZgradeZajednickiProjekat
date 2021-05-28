@@ -13,19 +13,56 @@ import java.util.List;
 
 /**
  *
+ *Klasa koja predstavlja korisnika programa moje zgrade i implementira interfejs GenericEntity.
+ *
+ *Korisnik ima id kao Long i ime, prezime, korisnicko ime i lozinku kao String vrednosti.
+ *
  * @author Sara
+ * @version 0.1
  */
 public class Korisnik implements GenericEntity{
 
+	/**
+	 * Id korisnika kao Long.
+	 */
     private Long id;
+    
+    /**
+	 * Ime korisnika kao String.
+	 */
     private String ime;
+    
+    /**
+	 * Prezime korisnika kao String.
+	 */
     private String prezime;
+    
+    /**
+	 * Korisnicko ime korisnika kao String.
+	 */
     private String korisnickoIme;
+    
+    /**
+	 * Lozinka korisnika kao String.
+	 */
     private String lozinka;
 
+    
+    /**
+	 * Kontruktor koji inicijalizuje objekat i nista vise.
+	 */
     public Korisnik() {
     }
 
+    /**
+	 * Konstruktor koji inicijalizuje objekat i postavlja vrednosti za id, ime, prezime, korisnicko ime i lozinku korisnika.
+	 * 
+	 * @param id Id korisnika kao Long.
+	 * @param ime Ime korisnika kao String.
+	 * @param prezime Prezime korisnika kao String.
+	 * @param korisnickoIme Korisnicko ime korisnika kao String.
+	 * @param lozinka Lozinka korisnika kao String.
+	 */
     public Korisnik(Long id, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.id = id;
         this.ime = ime;
@@ -34,42 +71,96 @@ public class Korisnik implements GenericEntity{
         this.lozinka = lozinka;
     }
 
+    /**
+	 * Vraca id korisnika.
+	 * 
+	 * @return Id korisnika kao Long.
+	 */
     public Long getId() {
         return id;
     }
 
+    /**
+	 * Postavlja id korisnika na novu vrednost.
+	 * 
+	 * @param id Id korisnika kao Long.
+	 * 
+	 */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+	 * Vraca ime korisnika.
+	 * 
+	 * @return Ime korisnika kao String.
+	 */
     public String getIme() {
         return ime;
     }
 
+    /**
+	 * Postavlja ime korisnika na novu vrednost.
+	 * 
+	 * @param ime Ime korisnika kao String.
+	 */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
+    /**
+	 * Vraca prezime korisnika.
+	 * 
+	 * @return Prezime korisnika kao String.
+	 */
     public String getPrezime() {
         return prezime;
     }
 
+    /**
+	 * Postavlja prezime korisnika na novu vrednost.
+	 * 
+	 * @param prezime Prezime korisnika kao String.
+	 * 
+	 */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
+    /**
+	 * Vraca korisnicko ime korisnika.
+	 * 
+	 * @return Korisnicko ime korisnika kao String.
+	 */
     public String getKorisnickoIme() {
         return korisnickoIme;
     }
 
+    /**
+	 * Postavlja korisnicko ime korisnika na novu vrednost.
+	 * 
+	 * @param korisnickoIme Korisnicko ime korisnika kao String.
+	 * 
+	 */
     public void setKorisnickoIme(String korisnickoIme) {
         this.korisnickoIme = korisnickoIme;
     }
 
+    /**
+	 * Vraca lozinku korisnika.
+	 * 
+	 * @return Lozinka korisnika kao String.
+	 */
     public String getLozinka() {
         return lozinka;
     }
 
+    /**
+   	 * Postavlja lozinku korisnika na novu vrednost.
+   	 * 
+   	 * @param lozinka Lozinka korisnika kao String.
+   	 * 
+   	 */
     public void setLozinka(String lozinka) {
         this.lozinka = lozinka;
     }
