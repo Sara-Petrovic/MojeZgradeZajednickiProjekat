@@ -105,6 +105,8 @@ public class Korisnik implements GenericEntity{
 	 * @param ime Ime korisnika kao String.
 	 */
     public void setIme(String ime) {
+    	if(ime == null)
+			throw new NullPointerException("Ime ne sme biti null");
         this.ime = ime;
     }
 
@@ -124,6 +126,8 @@ public class Korisnik implements GenericEntity{
 	 * 
 	 */
     public void setPrezime(String prezime) {
+    	if(prezime == null)
+			throw new NullPointerException("Prezime ne sme biti null");
         this.prezime = prezime;
     }
 
@@ -143,6 +147,8 @@ public class Korisnik implements GenericEntity{
 	 * 
 	 */
     public void setKorisnickoIme(String korisnickoIme) {
+    	if(korisnickoIme == null)
+			throw new NullPointerException("Korisnicko ime ne sme biti null");
         this.korisnickoIme = korisnickoIme;
     }
 
@@ -162,6 +168,8 @@ public class Korisnik implements GenericEntity{
    	 * 
    	 */
     public void setLozinka(String lozinka) {
+    	if(lozinka == null)
+			throw new NullPointerException("Lozinka ne sme biti null");
         this.lozinka = lozinka;
     }
 
