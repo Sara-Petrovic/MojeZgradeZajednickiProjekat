@@ -72,6 +72,8 @@ public class Mesto implements GenericEntity {
 	 * 
 	 */
     public void setNaziv(String naziv) {
+    	if(naziv == null)
+			throw new NullPointerException("Naziv ne sme biti null");
         this.naziv = naziv;
     }
 
@@ -91,6 +93,8 @@ public class Mesto implements GenericEntity {
 	 * 
 	 */
     public void setMestoId(Long mestoId) {
+    	if(mestoId == null)
+			throw new NullPointerException("Id ne sme biti null");
         this.mestoId = mestoId;
     }
 
@@ -109,6 +113,9 @@ public class Mesto implements GenericEntity {
 	 * @param ptt Ptt mesta kao String.
 	 */
     public void setPtt(String ptt) {
+    	if(ptt == null)
+			throw new NullPointerException("Ptt ne sme biti null");
+    	
         this.ptt = ptt;
     }
 
