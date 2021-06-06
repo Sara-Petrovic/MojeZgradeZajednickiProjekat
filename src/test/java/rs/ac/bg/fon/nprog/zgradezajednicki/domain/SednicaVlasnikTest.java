@@ -8,32 +8,48 @@ import org.junit.jupiter.api.Test;
 
 class SednicaVlasnikTest extends GenericEntityTest {
 
+	private SednicaVlasnik sv;
+	
 	@BeforeEach
 	void setUp() throws Exception {
+		genericEntity = new SednicaVlasnik();
+		sv = new SednicaVlasnik();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		genericEntity = null;
+		sv = null;
 	}
 
 	@Test
 	void testSednicaVlasnik() {
-		fail("Not yet implemented");
+		sv= new SednicaVlasnik();
+		
+		assertNotNull(sv);
 	}
 
 	@Test
 	void testSednicaVlasnikSednicaSkupstineVlasnikPosebnogDela() {
-		fail("Not yet implemented");
+		sv = new SednicaVlasnik(new SednicaSkupstine(), new VlasnikPosebnogDela());
+		
+		assertNotNull(sv);
+		assertNotNull(sv.getSednicaSkupstine());
+		assertNotNull(sv.getVlasnikPosebnogDela());
 	}
 
 	@Test
 	void testSetSednicaSkupstine() {
-		fail("Not yet implemented");
+		sv.setSednicaSkupstine(new SednicaSkupstine());
+		
+		assertNotNull(sv.getSednicaSkupstine());
 	}
 
 	@Test
 	void testSetVlasnikPosebnogDela() {
-		fail("Not yet implemented");
+		sv.setVlasnikPosebnogDela(new VlasnikPosebnogDela());
+		
+		assertNotNull(sv.getVlasnikPosebnogDela());
 	}
 
 }

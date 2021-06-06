@@ -5,70 +5,131 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+
 
 class StambenaZajednicaTest extends GenericEntityTest {
 
+	private StambenaZajednica sz;
+	
 	@BeforeEach
 	void setUp() throws Exception {
+		genericEntity = new StambenaZajednica();
+		sz = new StambenaZajednica();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		genericEntity = null;
+		sz = null;
 	}
 
 	@Test
 	void testStambenaZajednica() {
-		fail("Not yet implemented");
+		sz = new StambenaZajednica();
+		
+		assertNotNull(sz);
 	}
 
 	@Test
 	void testStambenaZajednicaLongStringStringMestoStringStringStringString() {
-		fail("Not yet implemented");
+		sz = new StambenaZajednica(3l, "Hilandarska", "1", new Mesto(), "170-123", "Intesa", "123", "321");
+		
+		assertNotNull(sz);
+		assertEquals(3l, sz.getStambenaZajednicaId());
+		assertEquals("1", sz.getBroj());
+		assertEquals("Hilandarska", sz.getUlica());
+		assertNotNull(sz.getMesto());
+		assertEquals("170-123", sz.getTekuciRacun());
+		assertEquals("Intesa", sz.getBanka());
+		assertEquals("123", sz.getPib());
+		assertEquals("321", sz.getMaticniBroj());
 	}
 
 	@Test
 	void testSetBanka() {
-		fail("Not yet implemented");
+		sz.setBanka("Unicredit");
+		
+		assertEquals("Unicredit", sz.getBanka());
 	}
 
 	@Test
 	void testSetPib() {
-		fail("Not yet implemented");
+		sz.setPib("123");
+		
+		assertEquals("123", sz.getPib());
 	}
 
 	@Test
 	void testSetMaticniBroj() {
-		fail("Not yet implemented");
+		sz.setMaticniBroj("321");
+		
+		assertEquals("321", sz.getMaticniBroj());
 	}
 
 	@Test
 	void testSetTekuciRacun() {
-		fail("Not yet implemented");
+		sz.setTekuciRacun("170-111");
+		
+		assertEquals("170-111", sz.getTekuciRacun());
 	}
 
 	@Test
 	void testSetStambenaZajednicaId() {
-		fail("Not yet implemented");
+		sz.setStambenaZajednicaId(12l);
+		
+		assertEquals(12l, sz.getStambenaZajednicaId());
 	}
 
 	@Test
 	void testSetUlica() {
-		fail("Not yet implemented");
+		sz.setUlica("Rajacka");
+		
+		assertEquals("Rajacka", sz.getUlica());
 	}
 
 	@Test
 	void testSetBroj() {
-		fail("Not yet implemented");
+		sz.setBroj("15");
+		
+		assertEquals("15", sz.getBroj());
 	}
 
 	@Test
 	void testSetMesto() {
-		fail("Not yet implemented");
+		sz.setMesto(new Mesto());
+		
+		assertNotNull(sz.getMesto());
 	}
 
 	@Test
-	void testEqualsObject() {
-		fail("Not yet implemented");
+	void testToString() {
+		sz.setUlica("Vojvode Stepe");
+		sz.setBroj("15");
+		sz.setMesto(new Mesto(1l, "123", "Beograd"));
+		
+		String s = sz.toString();
+		
+		assertTrue(s.contains("Vojvode Stepe"));
+		assertTrue(s.contains("15"));
+		assertTrue(s.contains("Beograd"));
+		
+	}
+	@ParameterizedTest
+	@CsvSource({
+		"167, 185, false",
+		"173, 173, true"
+
+	})
+	void testEqualsObject(Long id1,Long id2, boolean eq) {
+		sz.setStambenaZajednicaId(id1);
+		
+		StambenaZajednica sz2 = new StambenaZajednica();
+		sz2.setStambenaZajednicaId(id2);
+		
+		assertEquals(eq, sz.equals(sz2));
 	}
 
 }
