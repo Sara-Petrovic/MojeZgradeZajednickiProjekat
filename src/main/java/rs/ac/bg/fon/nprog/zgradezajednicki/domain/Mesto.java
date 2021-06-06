@@ -172,13 +172,12 @@ public class Mesto implements GenericEntity {
 
     @Override
     public String getColumnNamesForInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return "";
     }
 
     @Override
     public String getInsertValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getAlijas() {
@@ -187,18 +186,16 @@ public class Mesto implements GenericEntity {
 
     @Override
     public void setId(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	
+    	}
 
     @Override
     public String getUpdateValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getPrimaryKeyValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getJoin() {
@@ -207,8 +204,7 @@ public class Mesto implements GenericEntity {
 
     @Override
     public String selectWhere() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public List<GenericEntity> makeList(ResultSet rs) throws Exception {
@@ -216,8 +212,14 @@ public class Mesto implements GenericEntity {
         while (rs.next()) {
             Mesto mesto = new Mesto();
             mesto.setMestoId(rs.getLong("mestoid"));
-            mesto.setNaziv(rs.getString("naziv"));
-            mesto.setPtt(rs.getString("ptt"));
+            String naziv=rs.getString("naziv");
+            if(naziv!=null) {
+            	mesto.setNaziv(naziv);
+            }
+            String ptt=rs.getString("ptt");
+            if(ptt!=null) {
+            mesto.setPtt(ptt);
+            }
             lista.add(mesto);
             System.out.println(mesto);
         }

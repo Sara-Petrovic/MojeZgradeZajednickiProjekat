@@ -59,6 +59,7 @@ public class VlasnikPosebnogDela implements GenericEntity {
    	 * Kontruktor koji inicijalizuje objekat i nista vise.
    	 */
     public VlasnikPosebnogDela() {
+    	stambenaZajednica = new StambenaZajednica();
     }
 
     /**
@@ -317,7 +318,10 @@ public class VlasnikPosebnogDela implements GenericEntity {
             vlasnikPosebnogDela.setPrezime(rs.getString("prezime"));
             vlasnikPosebnogDela.setBrojPosebnogDela(rs.getString("brojposebnogdela"));
             vlasnikPosebnogDela.setVelicinaPosebnogDela(rs.getDouble("velicinaposebnogdela"));
-            vlasnikPosebnogDela.setMernaJedinica((MernaJedinica.valueOf(rs.getString("mernajedinica"))));
+            String mernaJedinica= rs.getString("mernajedinica");
+            if(mernaJedinica!=null) {
+            vlasnikPosebnogDela.setMernaJedinica((MernaJedinica.valueOf(mernaJedinica)));
+            }
             vlasnikPosebnogDela.setKontaktVlasnika(rs.getString("kontaktvlasnika"));
 
             StambenaZajednica stambenaZajednica = new StambenaZajednica();
@@ -331,8 +335,15 @@ public class VlasnikPosebnogDela implements GenericEntity {
 
             Mesto mesto = new Mesto();
             mesto.setMestoId(rs.getLong("mestoid"));
-            mesto.setNaziv(rs.getString("naziv"));
-            mesto.setPtt(rs.getString("ptt"));
+            String naziv=rs.getString("naziv");
+            if(naziv!=null) {
+            	mesto.setNaziv(naziv);
+            }
+            String ptt=rs.getString("ptt");
+            if(ptt!=null) {
+            mesto.setPtt(ptt);
+            }
+            
             stambenaZajednica.setMesto(mesto);
 
             vlasnikPosebnogDela.setStambenaZajednica(stambenaZajednica);

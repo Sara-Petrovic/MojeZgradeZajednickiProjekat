@@ -68,6 +68,7 @@ public class StambenaZajednica implements GenericEntity {
    	 * Kontruktor koji inicijalizuje objekat i nista vise.
    	 */
     public StambenaZajednica() {
+    	mesto = new Mesto();
     }
 
     /**
@@ -376,10 +377,16 @@ public class StambenaZajednica implements GenericEntity {
             stambenaZajednica.setMaticniBroj(rs.getString("maticnibroj"));
 
        
-            Mesto mesto = new Mesto();
+            Mesto mesto = new Mesto(1l,	"1", "Uzice");
             mesto.setMestoId(rs.getLong("mesto"));
-            mesto.setNaziv(rs.getString("naziv"));
-            mesto.setPtt(rs.getString("ptt"));
+            String naziv=rs.getString("naziv");
+            if(naziv!=null) {
+            	mesto.setNaziv(naziv);
+            }
+            String ptt=rs.getString("ptt");
+            if(ptt!=null) {
+            mesto.setPtt(ptt);
+            }
 
             stambenaZajednica.setMesto(mesto);
             lista.add(stambenaZajednica);

@@ -180,13 +180,11 @@ public class Korisnik implements GenericEntity{
 
     @Override
     public String getColumnNamesForInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getInsertValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getAlijas() {
@@ -195,13 +193,11 @@ public class Korisnik implements GenericEntity{
 
     @Override
     public String getUpdateValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getPrimaryKeyValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    	return "";    }
 
     @Override
     public String getJoin() {
@@ -219,10 +215,22 @@ public class Korisnik implements GenericEntity{
         while(rs.next()){
                 Korisnik korisnik = new Korisnik();
                 korisnik.setId(rs.getLong("id"));
-                korisnik.setIme(rs.getString("ime"));
-                korisnik.setPrezime(rs.getString("prezime"));
-                korisnik.setLozinka(rs.getString("lozinka"));
-                korisnik.setKorisnickoIme(rs.getString("korisnickoIme"));
+                String ime = rs.getString("ime");
+                if(ime!=null) {
+                korisnik.setIme(ime);
+                }
+                String prezime = rs.getString("prezime");
+                if(prezime!=null) {
+                korisnik.setPrezime(prezime);
+                }
+                String lozinka = rs.getString("lozinka");
+                if(lozinka!=null) {
+                korisnik.setLozinka(lozinka);
+                }
+                String korisnickoIme = rs.getString("korisnickoIme");
+                if(korisnickoIme!=null) {
+                korisnik.setKorisnickoIme(korisnickoIme);
+                }
                 lista.add(korisnik);
             }
             rs.close();

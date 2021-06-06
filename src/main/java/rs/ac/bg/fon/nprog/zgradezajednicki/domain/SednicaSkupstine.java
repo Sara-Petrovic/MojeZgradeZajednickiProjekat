@@ -59,6 +59,8 @@ public class SednicaSkupstine implements GenericEntity {
    	 */
     public SednicaSkupstine() {
         vlasnici = new ArrayList<>();
+        datumOdrzavanja = new Date();
+        stambenaZajednica = new StambenaZajednica();
     }
 
     /**
@@ -272,7 +274,6 @@ public class SednicaSkupstine implements GenericEntity {
             lista.add(sednica);
         }
 
-        //rs.close();
         return lista;
     }
 }

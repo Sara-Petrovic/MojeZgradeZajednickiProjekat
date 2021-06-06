@@ -35,6 +35,8 @@ public class SednicaVlasnik implements GenericEntity {
 	 * Kontruktor koji inicijalizuje objekat i nista vise.
 	 */
     public SednicaVlasnik() {
+    	sednicaSkupstine = new SednicaSkupstine();
+    	vlasnikPosebnogDela = new VlasnikPosebnogDela();
     }
 
     /**
@@ -145,7 +147,10 @@ public class SednicaVlasnik implements GenericEntity {
             vlasnikPosebnogDela.setPrezime(rs.getString("prezime"));
             vlasnikPosebnogDela.setBrojPosebnogDela(rs.getString("brojposebnogdela"));
             vlasnikPosebnogDela.setVelicinaPosebnogDela(rs.getDouble("velicinaposebnogdela"));
-            vlasnikPosebnogDela.setMernaJedinica((MernaJedinica.valueOf(rs.getString("mernajedinica"))));
+            String mernaJedinica= rs.getString("mernajedinica");
+            if(mernaJedinica!=null) {
+                vlasnikPosebnogDela.setMernaJedinica((MernaJedinica.valueOf(mernaJedinica)));
+                }
             vlasnikPosebnogDela.setKontaktVlasnika(rs.getString("kontaktvlasnika"));
             
             SednicaVlasnik sednicaVlasnik = new SednicaVlasnik();
