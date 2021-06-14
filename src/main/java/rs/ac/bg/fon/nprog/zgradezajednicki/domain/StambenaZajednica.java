@@ -203,6 +203,8 @@ public class StambenaZajednica implements GenericEntity {
 	 * @param ulica Ulica stambene zajednice kao String.
 	 */
     public void setUlica(String ulica) {
+    	if(ulica.length() <= 4)
+			throw new RuntimeException("Ulica mora imati vise od 4 znaka");
         this.ulica = ulica;
     }
 
@@ -369,7 +371,9 @@ public class StambenaZajednica implements GenericEntity {
             
             StambenaZajednica stambenaZajednica = new StambenaZajednica();
             stambenaZajednica.setStambenaZajednicaId(rs.getLong("stambenazajednicaid"));
-            stambenaZajednica.setUlica(rs.getString("ulica"));
+            String ulica = rs.getString("ulica");
+            if(ulica!=null) {
+            stambenaZajednica.setUlica(ulica);}
             stambenaZajednica.setBroj(rs.getString("broj"));
             stambenaZajednica.setTekuciRacun(rs.getString("tekuciracun"));
             stambenaZajednica.setBanka(rs.getString("banka"));

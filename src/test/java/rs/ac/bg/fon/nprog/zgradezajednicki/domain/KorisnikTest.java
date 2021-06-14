@@ -65,6 +65,13 @@ class KorisnikTest extends GenericEntityTest{
 		assertThrows(java.lang.NullPointerException.class, ()->k.setIme(null));
 		
 	}
+	
+	@Test
+	void testSetImeKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->k.setIme("P"));
+		
+	}
 
 	@Test
 	void testSetPrezime() {
@@ -79,6 +86,13 @@ class KorisnikTest extends GenericEntityTest{
 		assertThrows(java.lang.NullPointerException.class, ()->k.setPrezime(null));
 		
 	}
+	
+	@Test
+	void testSetPrezimeKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->k.setPrezime("T"));
+		
+	}
 
 	@Test
 	void testSetKorisnickoIme() {
@@ -87,11 +101,19 @@ class KorisnikTest extends GenericEntityTest{
 		assertEquals("pera", k.getKorisnickoIme());
 	}
 	
+	
 	@Test
 	void testSetKorisnickoImeNull() {
 
 		assertThrows(java.lang.NullPointerException.class, ()->k.setKorisnickoIme(null));
 
+	}
+	
+	@Test
+	void testSetKorisnickoImeKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->k.setKorisnickoIme("p"));
+		
 	}
 
 	@Test
@@ -106,6 +128,13 @@ class KorisnikTest extends GenericEntityTest{
 
 		assertThrows(java.lang.NullPointerException.class, ()->k.setLozinka(null));
 
+	}
+	
+	@Test
+	void testSetLozinkaKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->k.setLozinka("p"));
+		
 	}
 
 	

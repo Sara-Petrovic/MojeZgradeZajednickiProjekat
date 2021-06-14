@@ -56,6 +56,12 @@ class MestoTest extends GenericEntityTest {
 
 		assertThrows(java.lang.NullPointerException.class, ()->m.setNaziv(null));
 
+	}
+	
+	@Test
+	void testSetNazivKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->m.setNaziv("U"));
 		
 	}
 

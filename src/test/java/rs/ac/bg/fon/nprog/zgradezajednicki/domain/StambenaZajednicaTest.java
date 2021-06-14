@@ -91,6 +91,12 @@ class StambenaZajednicaTest extends GenericEntityTest {
 	}
 
 	@Test
+	void testSetUlicaKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->sz.setUlica("Vojv"));
+		
+	}
+	@Test
 	void testSetBroj() {
 		sz.setBroj("15");
 		

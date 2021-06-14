@@ -107,6 +107,8 @@ public class Korisnik implements GenericEntity{
     public void setIme(String ime) {
     	if(ime == null)
 			throw new NullPointerException("Ime ne sme biti null");
+    	if(ime.length() <=2)
+			throw new RuntimeException("Ime mora imati vise od 2 znaka");
         this.ime = ime;
     }
 
@@ -128,6 +130,8 @@ public class Korisnik implements GenericEntity{
     public void setPrezime(String prezime) {
     	if(prezime == null)
 			throw new NullPointerException("Prezime ne sme biti null");
+    	if(prezime.length() <= 2)
+			throw new RuntimeException("Prezime mora imati vise od 2 znaka");
         this.prezime = prezime;
     }
 
@@ -149,6 +153,8 @@ public class Korisnik implements GenericEntity{
     public void setKorisnickoIme(String korisnickoIme) {
     	if(korisnickoIme == null)
 			throw new NullPointerException("Korisnicko ime ne sme biti null");
+    	if(korisnickoIme.length() <= 2)
+			throw new RuntimeException("Korisnicko ime mora imati vise od 2 znaka");
         this.korisnickoIme = korisnickoIme;
     }
 
@@ -170,6 +176,8 @@ public class Korisnik implements GenericEntity{
     public void setLozinka(String lozinka) {
     	if(lozinka == null)
 			throw new NullPointerException("Lozinka ne sme biti null");
+    	if(lozinka.length() <= 2)
+			throw new RuntimeException("Lozinka mora imati vise od 2 znaka");
         this.lozinka = lozinka;
     }
 

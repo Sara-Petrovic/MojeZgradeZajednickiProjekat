@@ -74,6 +74,8 @@ public class Mesto implements GenericEntity {
     public void setNaziv(String naziv) {
     	if(naziv == null)
 			throw new NullPointerException("Naziv ne sme biti null");
+    	if(naziv.length() <= 1) //Ub ima 2 slova
+			throw new RuntimeException("Naziv mesta mora imati vise od 1 znaka");
         this.naziv = naziv;
     }
 
