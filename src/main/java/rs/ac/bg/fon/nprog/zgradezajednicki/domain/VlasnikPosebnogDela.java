@@ -140,6 +140,9 @@ public class VlasnikPosebnogDela implements GenericEntity {
 	 * @param ime Ime vlasnika kao String.
 	 */
     public void setIme(String ime) {
+    	
+		if(ime.length() <= 2)
+			throw new RuntimeException("Ime mora imati vise od 2 znaka");
         this.ime = ime;
     }
     /**
@@ -156,6 +159,8 @@ public class VlasnikPosebnogDela implements GenericEntity {
 	 * @param prezime Prezime vlasnika kao String.
 	 */
     public void setPrezime(String prezime) {
+    	if(prezime.length() <= 2)
+			throw new RuntimeException("Prezime mora imati vise od 2 znaka");
         this.prezime = prezime;
     }
     /**
@@ -314,8 +319,15 @@ public class VlasnikPosebnogDela implements GenericEntity {
         while (rs.next()) {
             VlasnikPosebnogDela vlasnikPosebnogDela = new VlasnikPosebnogDela();
             vlasnikPosebnogDela.setVlasnikId(rs.getLong("vlasnikid"));
-            vlasnikPosebnogDela.setIme(rs.getString("ime"));
-            vlasnikPosebnogDela.setPrezime(rs.getString("prezime"));
+            String ime = rs.getString("ime");
+            if(ime!=null) {
+            vlasnikPosebnogDela.setIme(ime);
+            }
+            String prezime = rs.getString("prezime");
+            if(prezime!=null) {
+            	vlasnikPosebnogDela.setPrezime(prezime);
+            }
+            
             vlasnikPosebnogDela.setBrojPosebnogDela(rs.getString("brojposebnogdela"));
             vlasnikPosebnogDela.setVelicinaPosebnogDela(rs.getDouble("velicinaposebnogdela"));
             String mernaJedinica= rs.getString("mernajedinica");
@@ -326,7 +338,10 @@ public class VlasnikPosebnogDela implements GenericEntity {
 
             StambenaZajednica stambenaZajednica = new StambenaZajednica();
             stambenaZajednica.setStambenaZajednicaId(rs.getLong("stambenazajednicaid"));
-            stambenaZajednica.setUlica(rs.getString("ulica"));
+            String ulica = rs.getString("ulica");
+            if(ulica!=null) {
+            stambenaZajednica.setUlica(ulica);
+            }
             stambenaZajednica.setBroj(rs.getString("broj"));
             stambenaZajednica.setTekuciRacun(rs.getString("tekuciracun"));
             stambenaZajednica.setBanka(rs.getString("banka"));

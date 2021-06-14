@@ -156,6 +156,8 @@ public class SednicaSkupstine implements GenericEntity {
 	 * @param brojPrisutnih Broj prisutnih vlasnika kao int.
 	 */
     public void setBrojPrisutnih(int brojPrisutnih) {
+    	if(brojPrisutnih==0)
+    		throw new RuntimeException("Broj prisutnih ne sme biti 0.");
         this.brojPrisutnih = brojPrisutnih;
     }
 
@@ -264,7 +266,10 @@ public class SednicaSkupstine implements GenericEntity {
             SednicaSkupstine sednica = new SednicaSkupstine();
             sednica.setSednicaSkupstineId(rs.getLong("sednicaskupstineid"));
             sednica.setDatumOdrzavanja(rs.getDate("datumodrzavanja"));
-            sednica.setBrojPrisutnih(rs.getInt("brojprisutnih"));
+            int brojPrisutnih =rs.getInt("brojprisutnih");
+            if(brojPrisutnih!=0) {
+            sednica.setBrojPrisutnih(brojPrisutnih);
+            }
             sednica.setDnevniRed(rs.getString("dnevnired"));
 
             StambenaZajednica stambenaZajednica = new StambenaZajednica();

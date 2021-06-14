@@ -63,6 +63,13 @@ class VlasnikPosebnogDelaTest extends GenericEntityTest {
 		
 		assertEquals("Mika",v.getIme());
 	}
+	
+	@Test
+	void testSetImeKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->v.setIme("P"));
+		
+	}
 
 	@Test
 	void testSetPrezime() {
@@ -71,6 +78,12 @@ class VlasnikPosebnogDelaTest extends GenericEntityTest {
 		assertEquals("Mikic",v.getPrezime());
 	}
 
+	@Test
+	void testSetPrezimeKratakString() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->v.setPrezime("T"));
+		
+	}
 	@Test
 	void testSetBrojPosebnogDela() {
 		v.setBrojPosebnogDela("14");

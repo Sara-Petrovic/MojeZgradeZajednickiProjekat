@@ -78,6 +78,12 @@ class SednicaSkupstineTest extends GenericEntityTest {
 	}
 
 	@Test
+	void testSetBrojPrisutnihNula() {
+		
+		assertThrows(java.lang.RuntimeException.class, ()->ss.setBrojPrisutnih(0));
+		
+	}
+	@Test
 	void testSetDnevniRed() {
 		ss.setDnevniRed("Krecenje");
 		
